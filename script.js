@@ -1,51 +1,47 @@
-let selectedMood = "";
-const emojis = document.querySelectorAll('.emoji');
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
 
-// Đảm bảo sự kiện click hoạt động trên các biểu cảm
-emojis.forEach(emoji => {
-  emoji.addEventListener('click', () => {
-    // Reset trạng thái của tất cả biểu cảm
-    emojis.forEach(e => e.classList.remove('selected'));
-    // Gán trạng thái đã chọn cho biểu cảm được nhấn
-    emoji.classList.add('selected');
-    selectedMood = emoji.getAttribute('data-mood');
-  });
-});
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-document.getElementById('moodForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+button {
+  margin: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-  // Kiểm tra xem người dùng đã chọn biểu cảm chưa
-  if (!selectedMood) {
-    alert("Bạn chưa chọn tâm trạng!");
-    return;
-  }
+#start {
+  background-color: #4CAF50;
+  color: white;
+}
 
-  const name = document.getElementById('name').value;
-  const note = document.getElementById('note').value;
-  const time = new Date().toLocaleString();
+#stop {
+  background-color: #f44336;
+  color: white;
+}
 
-  const formData = new FormData();
-  formData.append("name", name);
-  formData.append("mood", selectedMood);
-  formData.append("note", note);
-  formData.append("time", time);
+button:hover {
+  opacity: 0.9;
+}
 
-  // Gửi dữ liệu đến Google Apps Script
-  fetch("https://script.google.com/macros/s/AKfycbyBBlQV5OJDN4J--xS7u_yeWPSsS0TE7gKD9ATt2bZAg1msc1iEuzjgpcVhnboEnTea-g/exec", {
-    method: "POST",
-    body: formData
-  })
-  .then(res => res.text())
-  .then(data => {
-    // Hiển thị thông báo cảm ơn sau khi gửi thành công
-    alert("✅ Cảm ơn bạn đã chia sẻ!");
-    document.getElementById('moodForm').reset();
-    emojis.forEach(e => e.classList.remove('selected'));
-    selectedMood = "";
-  })
-  .catch(err => {
-    console.error(err);
-    alert("❌ Gửi thất bại. Vui lòng thử lại.");
-  });
-});
+#message {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
