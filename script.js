@@ -31,13 +31,12 @@ document.getElementById('moodForm').addEventListener('submit', function(e) {
     method: "POST",
     body: formData
   })
-  .then(res => res.text())
-  .then(data => {
+  ..then(data => {
     document.getElementById('status').innerText = "✅ Cảm ơn bạn đã chia sẻ!";
     document.getElementById('moodForm').reset();
     emojis.forEach(e => e.classList.remove('selected'));
     selectedMood = "";
-  })
+})
   .catch(err => {
     console.error(err);
     document.getElementById('status').innerText = "❌ Gửi thất bại. Vui lòng thử lại.";
