@@ -12,6 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .container {
@@ -22,10 +23,12 @@ body {
   max-width: 400px;
   width: 100%;
   animation: fadeIn 1s ease;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 button {
@@ -54,14 +57,20 @@ button:hover {
 
 #message {
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
   min-height: 2rem;
-  transition: color 0.3s;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+#countdown {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
