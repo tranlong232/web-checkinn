@@ -32,7 +32,7 @@ document.getElementById('moodForm').addEventListener('submit', function(e) {
     body: formData
   })
   .then(data => {
-    document.getElementById('status').innerText = "✅ Cảm ơn bạn đã chia sẻ!";
+    alert("✅ Cảm ơn bạn đã chia sẻ!");
     document.getElementById('moodForm').reset();
     emojis.forEach(e => e.classList.remove('selected'));
     selectedMood = "";
