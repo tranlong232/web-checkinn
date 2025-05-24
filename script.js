@@ -22,7 +22,7 @@ startBtn.addEventListener("click", () => {
     message.textContent = "⏳ Hẹn giờ đã chạy rồi mà!";
     return;
   }
-  message.textContent = "✅ Hẹn giờ bắt đầu rồi. Cố gắng nhé!";
+  message.textContent = "✅ Hẹn giờ bắt đầu rồi.Địt Mẹ Mày!";
   timer = setInterval(() => {
     const randomMsg = messages[Math.floor(Math.random() * messages.length)];
     alert(randomMsg);
@@ -34,7 +34,7 @@ stopBtn.addEventListener("click", () => {
   if (timer) {
     clearInterval(timer);
     timer = null;
-    message.textContent = "⏸ Hẹn giờ đã dừng. Nhớ nghỉ ngơi nha!";
+    message.textContent = "⏸ Hẹn giờ đã dừng.Cút đi ngủ đi!";
   } else {
     message.textContent = "⛔ Chưa có hẹn giờ nào chạy cả!";
   }
