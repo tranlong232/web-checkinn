@@ -1,28 +1,19 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Check-in Tâm Trạng</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Hẹn Giờ Nghỉ Ngơi Siêu Bá Đạo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h2>😊 Hôm nay bạn cảm thấy thế nào?</h2>
-    <div id="moodChoices">
-      <span class="emoji" data-mood="Vui">😄</span>
-      <span class="emoji" data-mood="Bình thường">😐</span>
-      <span class="emoji" data-mood="Mệt mỏi">😞</span>
-    </div>
-
-    <form id="moodForm">
-      <input type="text" id="name" placeholder="Tên (có thể để trống)" />
-      <textarea id="note" placeholder="Muốn chia sẻ gì không?"></textarea>
-      <button type="submit">Gửi Check-in</button>
-    </form>
-
-    <p id="status"></p>
+    <h1>🕒 Hẹn Giờ Nghỉ Ngơi Siêu Bá Đạo 🧘</h1>
+    <button id="start">Bắt đầu hẹn giờ</button>
+    <button id="stop">Dừng hẹn giờ</button>
+    <p id="message">Ấn "Bắt đầu" để bắt đầu hẹn giờ nhé!</p>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
