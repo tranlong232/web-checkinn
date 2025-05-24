@@ -16,7 +16,7 @@ const messages = [
 
 // 30 phút = 1800000ms
 // Để test nhanh, chỉnh thành 5000 (5 giây)
-const delay = 5000;
+const delay = 1000;
 
 startBtn.addEventListener("click", () => {
   if (timer) {
